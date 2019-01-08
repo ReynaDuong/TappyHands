@@ -10,12 +10,23 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet var HighScoreLable: UILabel!
+    @IBOutlet var ScoreLable: UILabel!
+    @IBOutlet var PlayButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        
+        // create the soft corners for the High Score label and the button
+        HighScoreLable.layer.cornerRadius = 5.0
+        PlayButton.layer.cornerRadius = 5.0
+        
+        
     }
 
-    
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
 
 }
 
