@@ -187,6 +187,7 @@
                     <connections>
                         <outlet property="scoreLabel" destination="fRT-Zq-hOm" id="TDL-3K-HwW"/>
                         <outlet property="tapButton" destination="H5d-Le-Ji4" id="hRN-tY-Muu"/>
+                        <outlet property="timeLable" destination="ABF-xE-dDX" id="SeM-Gh-0Fc"/>
                         <outlet property="timeRemainingLabel" destination="aJu-HW-MFh" id="wz0-Ib-i2j"/>
                     </connections>
                 </viewController>

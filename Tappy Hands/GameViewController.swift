@@ -14,9 +14,16 @@ class GameViewController: UIViewController {
     @IBOutlet var timeRemainingLabel: UILabel!
     @IBOutlet var scoreLabel: UILabel!
     @IBOutlet var tapButton: UIButton!
+    @IBOutlet var timeLable: UILabel!
     
-    // tap times
     var tapInt = 0
+    var startInt = 3
+    var startTimer = Timer()
+    var gameInt = 10
+    var gameTimer = Timer()
+
+    static let BUTTON_TITLE = "Tap Me"
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -30,9 +37,48 @@ class GameViewController: UIViewController {
         tapInt = 0
         scoreLabel.text = String(tapInt)
         
+        // display the timer till the game begins
+        startInt = 3
+        tapButton.setTitle(String(startInt), for: .normal)
+        tapButton.isEnabled = false
+        startTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (GameViewController.startGameTimer), userInfo: nil, repeats: true)
+        
+        // display the initial time countdown
+        gameInt = 10
+        timeLable.text = String(gameInt)
     }
     
 
+    @objc func startGameTimer () {
+        startInt -= 1
+        tapButton.setTitle(String(startInt), for: .normal)
+        
+        if startInt == 0 {
+            // stop the timer from working
+            startTimer.invalidate()
+            
+            // change the button back
+            tapButton.setTitle(GameViewController.BUTTON_TITLE, for: .normal)
+            tapButton.isEnabled = true
+            
+            // enable the timer for the game
+            gameTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector (GameViewController.game), userInfo: nil, repeats: true)
+        }
+    }
+    
+    
+    @objc func game (){
+        // display the countdown time
+        gameInt -= 1
+        timeLable.text = String(gameInt)
+        
+        // timer ends
+        if gameInt == 0 {
+            gameTimer.invalidate()
+            tapButton.isEnabled = false
+        }
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
