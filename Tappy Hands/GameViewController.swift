@@ -67,7 +67,7 @@ class GameViewController: UIViewController {
     }
     
     
-    @objc func game (){
+    @objc func game() {
         // display the countdown time
         gameInt -= 1
         timeLable.text = String(gameInt)
@@ -76,7 +76,16 @@ class GameViewController: UIViewController {
         if gameInt == 0 {
             gameTimer.invalidate()
             tapButton.isEnabled = false
+            
+            // change to the end game screen
+            Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(GameViewController.endGame), userInfo: nil, repeats: false)
         }
+    }
+    
+    @objc func endGame() {
+        let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! EndViewController
+        
+        self.present(vc, animated: false, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

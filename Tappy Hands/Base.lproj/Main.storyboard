@@ -92,7 +92,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="20" y="27.436281859070466"/>
+            <point key="canvasLocation" x="-246" y="27"/>
         </scene>
         <!--Game View Controller-->
         <scene sceneID="4AF-eN-I1e">
@@ -193,7 +193,124 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qIe-Sp-hXD" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="30.134932533733135"/>
+            <point key="canvasLocation" x="519" y="27"/>
+        </scene>
+        <!--End View Controller-->
+        <scene sceneID="MrV-g4-Oci">
+            <objects>
+                <viewController storyboardIdentifier="endGame" id="okf-Ud-mDy" customClass="EndViewController" customModule="Tappy_Hands" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="VNt-uM-TzY">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="cNU-cC-Hzf">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="K3M-Lb-yPE">
+                                <rect key="frame" x="34" y="347" width="307" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="e9a-ND-Uem"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
+                                <state key="normal" title="Share Email">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOU-XG-wkH">
+                                <rect key="frame" x="34" y="198" width="307" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="nh0-zK-M6l"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
+                                <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vmp-5p-6hF">
+                                <rect key="frame" x="34" y="134" width="307" height="56"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <size key="shadowOffset" width="2" height="1"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time Remaining" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ydy-e3-2MJ">
+                                <rect key="frame" x="34" y="40" width="307" height="75"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="t4U-3x-2pZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="30"/>
+                                <color key="textColor" red="0.016804177310000001" green="0.19835099580000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iJV-NM-MTw">
+                                <rect key="frame" x="34" y="478" width="307" height="169"/>
+                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="40"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v5B-EL-USi">
+                                <rect key="frame" x="34" y="289" width="307" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="WEE-n0-ylh"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
+                                <state key="normal" title="Share Twitter">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8q-mt-WLD">
+                                <rect key="frame" x="34" y="405" width="307" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="0.25" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="u2I-EV-wDU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Avenir-Black" family="Avenir" pointSize="25"/>
+                                <state key="normal" title="Share SMS">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="v5B-EL-USi" secondAttribute="trailing" constant="34" id="3Li-8a-WdQ"/>
+                            <constraint firstItem="cNU-cC-Hzf" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" id="6ql-hi-Lby"/>
+                            <constraint firstItem="cNU-cC-Hzf" firstAttribute="trailing" secondItem="U4t-Dy-CZb" secondAttribute="trailing" id="6zo-lV-fgQ"/>
+                            <constraint firstItem="K3M-Lb-yPE" firstAttribute="top" secondItem="v5B-EL-USi" secondAttribute="bottom" constant="8" id="BHg-G6-NSK"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="iJV-NM-MTw" secondAttribute="trailing" constant="34" id="Cbz-cZ-rc4"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="ydy-e3-2MJ" secondAttribute="trailing" constant="34" id="J85-G9-v9J"/>
+                            <constraint firstItem="NOU-XG-wkH" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="JiE-rx-UF6"/>
+                            <constraint firstItem="iJV-NM-MTw" firstAttribute="top" secondItem="w8q-mt-WLD" secondAttribute="bottom" constant="23" id="KzD-zy-D7c"/>
+                            <constraint firstItem="ydy-e3-2MJ" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="LwV-KV-yHo"/>
+                            <constraint firstItem="Vmp-5p-6hF" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="O1v-Vf-95k"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="Vmp-5p-6hF" secondAttribute="trailing" constant="34" id="PrW-7l-eJV"/>
+                            <constraint firstItem="iJV-NM-MTw" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="XIN-J3-kzk"/>
+                            <constraint firstItem="NOU-XG-wkH" firstAttribute="top" secondItem="Vmp-5p-6hF" secondAttribute="bottom" constant="8" id="XgQ-6k-ASg"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="bottom" secondItem="iJV-NM-MTw" secondAttribute="bottom" constant="20" id="Zcn-I5-vap"/>
+                            <constraint firstItem="v5B-EL-USi" firstAttribute="top" secondItem="NOU-XG-wkH" secondAttribute="bottom" constant="16" id="ZlX-Ql-dRm"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="K3M-Lb-yPE" secondAttribute="trailing" constant="34" id="crS-Df-KKC"/>
+                            <constraint firstItem="K3M-Lb-yPE" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="gKM-3b-5Vg"/>
+                            <constraint firstItem="cNU-cC-Hzf" firstAttribute="top" secondItem="VNt-uM-TzY" secondAttribute="top" id="hUV-cX-bpk"/>
+                            <constraint firstItem="cNU-cC-Hzf" firstAttribute="bottom" secondItem="U4t-Dy-CZb" secondAttribute="bottom" id="iQi-6i-rTm"/>
+                            <constraint firstItem="Vmp-5p-6hF" firstAttribute="top" secondItem="ydy-e3-2MJ" secondAttribute="bottom" constant="19" id="mW9-dn-B7x"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="w8q-mt-WLD" secondAttribute="trailing" constant="34" id="n6H-ph-dd3"/>
+                            <constraint firstItem="w8q-mt-WLD" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="oYl-mr-APl"/>
+                            <constraint firstItem="v5B-EL-USi" firstAttribute="leading" secondItem="U4t-Dy-CZb" secondAttribute="leading" constant="34" id="qCG-sR-XF2"/>
+                            <constraint firstItem="U4t-Dy-CZb" firstAttribute="trailing" secondItem="NOU-XG-wkH" secondAttribute="trailing" constant="34" id="slL-Zc-ocu"/>
+                            <constraint firstItem="ydy-e3-2MJ" firstAttribute="top" secondItem="U4t-Dy-CZb" secondAttribute="top" constant="20" id="tVC-fS-rod"/>
+                            <constraint firstItem="w8q-mt-WLD" firstAttribute="top" secondItem="K3M-Lb-yPE" secondAttribute="bottom" constant="8" id="wQw-KF-5de"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="U4t-Dy-CZb"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="P1Y-dn-byV" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1192.8" y="26.53673163418291"/>
         </scene>
     </scenes>
     <resources>
