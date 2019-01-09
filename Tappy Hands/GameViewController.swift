@@ -19,8 +19,11 @@ class GameViewController: UIViewController {
     var tapInt = 0
     var startInt = 3
     var startTimer = Timer()
+    
     var gameInt = 10
     var gameTimer = Timer()
+    
+    var recordData:String!
 
     static let BUTTON_TITLE = "Tap Me"
     
@@ -46,6 +49,11 @@ class GameViewController: UIViewController {
         // display the initial time countdown
         gameInt = 10
         timeLable.text = String(gameInt)
+        
+        // get the current high score
+        let userDefaults = Foundation.UserDefaults.standard
+        let value = userDefaults.string(forKey: "Record")
+        recordData = value
     }
     
 
@@ -66,7 +74,9 @@ class GameViewController: UIViewController {
         }
     }
     
-    
+    /*
+     switch to the game screen
+     */
     @objc func game() {
         // display the countdown time
         gameInt -= 1
@@ -77,20 +87,46 @@ class GameViewController: UIViewController {
             gameTimer.invalidate()
             tapButton.isEnabled = false
             
+            if (recordData == nil){
+                // save the score to the key Record created
+                let savedString = scoreLabel.text
+                _ = Foundation.UserDefaults.standard
+                UserDefaults.setValue(savedString, forKey: "Record")
+            }
+            else{
+                let score:Int? = Int(scoreLabel.text!)
+                let record:Int? = Int(recordData)
+                
+                if score! > record!{
+                    // save the score to Record
+                    let savedString = scoreLabel.text
+                    _ = Foundation.UserDefaults.standard
+                    UserDefaults.setValue(savedString, forKey: "Record")
+                }
+            }
+            
             // change to the end game screen
             Timer.scheduledTimer(timeInterval: 2, target: self, selector: #selector(GameViewController.endGame), userInfo: nil, repeats: false)
         }
     }
     
+    
+    /*
+     switch to the end game screen
+     */
     @objc func endGame() {
+        
+        // get view controller of the view endGame
         let vc = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "endGame") as! EndViewController
+        
+        // store the score to scoreData in the endGame view
+        vc.scoreData = scoreLabel.text
         
         self.present(vc, animated: false, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     /**

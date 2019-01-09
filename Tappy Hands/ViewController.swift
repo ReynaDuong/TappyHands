@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet var highScoreLable: UILabel!
     @IBOutlet var scoreLable: UILabel!
+    
     @IBOutlet var playButton: UIButton!
     
     override func viewDidLoad() {
@@ -24,6 +25,26 @@ class ViewController: UIViewController {
         
     }
 
+    /*
+     trigger everytime the view appear again (switch back)
+     display the saved data to the high score label
+     */
+    override func viewWillAppear(_ animated: Bool) {
+        let userDefaults = Foundation.UserDefaults.standard
+        let value  = userDefaults.value(forKey: "Record")
+    
+        if (value == nil){
+            // set the value to 0
+            scoreLable.text = "0"
+        }
+        else{
+            scoreLable.text = (value as! String)
+        }
+        
+        scoreLable.text = (value as! String)
+    }
+    
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         
