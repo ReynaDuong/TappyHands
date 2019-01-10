@@ -40,8 +40,6 @@ class ViewController: UIViewController {
         else{
             scoreLable.text = (value as! String)
         }
-        
-        scoreLable.text = (value as! String)
     }
     
     

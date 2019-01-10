@@ -85,24 +85,25 @@ class GameViewController: UIViewController {
         // timer ends
         if gameInt == 0 {
             gameTimer.invalidate()
-            tapButton.isEnabled = false
             
             if (recordData == nil){
                 // save the score to the key Record created
                 let savedString = scoreLabel.text
-                _ = Foundation.UserDefaults.standard
-                UserDefaults.setValue(savedString, forKey: "Record")
+                let userDefaults = Foundation.UserDefaults.standard
+                userDefaults.set(savedString, forKey: "Record")
             }
             else{
                 let score:Int? = Int(scoreLabel.text!)
                 let record:Int? = Int(recordData)
-                
+
                 if score! > record!{
                     // save the score to Record
                     let savedString = scoreLabel.text
-                    _ = Foundation.UserDefaults.standard
-                    UserDefaults.setValue(savedString, forKey: "Record")
+                    let userDefaults = Foundation.UserDefaults.standard
+                    userDefaults.set(savedString, forKey: "Record")
                 }
+
+                tapButton.isEnabled = false
             }
             
             // change to the end game screen
