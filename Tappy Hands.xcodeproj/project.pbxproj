@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		4F0852B321E5440A00DB5417 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0852B221E5440A00DB5417 /* GameViewController.swift */; };
 		4F0852B521E6840900DB5417 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F0852B421E6840900DB5417 /* EndViewController.swift */; };
+		4F20465221E944E600E024FF /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F20465121E944E600E024FF /* Social.framework */; };
+		4F20465621E94C4200E024FF /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4F20465521E94C4200E024FF /* MessageUI.framework */; };
 		4FB84EA221E3F49D00E49A1E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB84EA121E3F49D00E49A1E /* AppDelegate.swift */; };
 		4FB84EA421E3F49D00E49A1E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4FB84EA321E3F49D00E49A1E /* ViewController.swift */; };
 		4FB84EA721E3F49D00E49A1E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4FB84EA521E3F49D00E49A1E /* Main.storyboard */; };
@@ -38,6 +40,8 @@
 /* Begin PBXFileReference section */
 		4F0852B221E5440A00DB5417 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
 		4F0852B421E6840900DB5417 /* EndViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
+		4F20465121E944E600E024FF /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		4F20465521E94C4200E024FF /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		4FB84E9E21E3F49D00E49A1E /* Tappy Hands.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Tappy Hands.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		4FB84EA121E3F49D00E49A1E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4FB84EA321E3F49D00E49A1E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4F20465621E94C4200E024FF /* MessageUI.framework in Frameworks */,
+				4F20465221E944E600E024FF /* Social.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +84,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4F20464C21E93F8100E024FF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4F20465521E94C4200E024FF /* MessageUI.framework */,
+				4F20465121E944E600E024FF /* Social.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		4FB84E9521E3F49D00E49A1E = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +100,7 @@
 				4FB84EB521E3F49F00E49A1E /* Tappy HandsTests */,
 				4FB84EC021E3F49F00E49A1E /* Tappy HandsUITests */,
 				4FB84E9F21E3F49D00E49A1E /* Products */,
+				4F20464C21E93F8100E024FF /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};

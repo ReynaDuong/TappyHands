@@ -7,8 +7,10 @@
 //
 
 import UIKit
+import Social
+import MessageUI
 
-class EndViewController: UIViewController {
+class EndViewController: UIViewController, MFMailComposeViewControllerDelegate, MFMessageComposeViewControllerDelegate {
 
     @IBOutlet var scoreLable: UILabel!
     @IBOutlet var shareLabel: UILabel!
@@ -39,6 +41,12 @@ class EndViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
     
+    /**
+     change the status bar style for each view
+     */
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        return .lightContent
+    }
     /*
      action of the button Restart
      */
@@ -48,6 +56,79 @@ class EndViewController: UIViewController {
         
         // go back to the home view
         self.presentingViewController?.dismiss(animated: false, completion: nil)
+    }
+    
+    @IBAction func shareTwitter(_ sender: Any) {
+        if SLComposeViewController.isAvailable(forServiceType: SLServiceTypeTwitter){
+            let twitter:SLComposeViewController = SLComposeViewController(forServiceType: SLServiceTypeTwitter)
+            
+            twitter.setInitialText("My final score was: \(String(describing: scoreLable.text))")
+            
+            self.present(twitter, animated: true, completion: nil)
+        }
+        else{
+            let alert = UIAlertController(title: "Account", message: "Please download Twitter app and log into your twitter account", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+        
+    }
+    
+    @IBAction func shareEmail(_ sender: Any) {
+        // check if can send email
+        if MFMailComposeViewController.canSendMail(){
+            let mail:MFMailComposeViewController = MFMailComposeViewController()
+            
+            mail.mailComposeDelegate = self
+            
+            mail.setCcRecipients(nil)
+            mail.setSubject("My new record")
+            mail.setMessageBody("My final score was: \(String(describing: scoreLable.text))", isHTML: false)
+            
+            self.present(mail, animated: true, completion: nil)
+        }
+        else{
+            let alert = UIAlertController(title: "Account", message: "Please log into your email account", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    /*
+     when the send email ends, stays in the app
+    */
+    func mailComposeController(_ controller: MFMailComposeViewController, didFinishWith result: MFMailComposeResult, error: Error?) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
+    
+    @IBAction func shareSMS(_ sender: Any) {
+        if MFMessageComposeViewController.canSendText(){
+            let message:MFMessageComposeViewController = MFMessageComposeViewController()
+            
+            message.messageComposeDelegate = self
+            
+            message.recipients = nil
+            message.body = "My final score was: \(String(describing: scoreLable.text))!!!!"
+            
+            self.present(message, animated: true, completion: nil)
+        }
+        else{
+            let alert = UIAlertController(title: "Warning", message: "This device cannot send SMS messages", preferredStyle: UIAlertController.Style.alert)
+            
+            alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
+            
+            self.present(alert, animated: true, completion: nil)
+        }
+    }
+    
+    
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        self.dismiss(animated: true, completion: nil)
     }
     
 }

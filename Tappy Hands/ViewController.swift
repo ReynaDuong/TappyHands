@@ -22,9 +22,9 @@ class ViewController: UIViewController {
         highScoreLable.layer.cornerRadius = 5.0
         playButton.layer.cornerRadius = 5.0
         
-        
     }
 
+    
     /*
      trigger everytime the view appear again (switch back)
      display the saved data to the high score label
@@ -45,7 +45,6 @@ class ViewController: UIViewController {
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        
     }
     
     /**

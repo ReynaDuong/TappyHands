@@ -216,6 +216,9 @@
                                 <state key="normal" title="Share Email">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareEmail:" destination="okf-Ud-mDy" eventType="touchUpInside" id="qfk-np-Eyf"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NOU-XG-wkH">
                                 <rect key="frame" x="34" y="198" width="307" height="75"/>
@@ -266,6 +269,9 @@
                                 <state key="normal" title="Share Twitter">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareTwitter:" destination="okf-Ud-mDy" eventType="touchUpInside" id="jjb-i7-DXo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w8q-mt-WLD">
                                 <rect key="frame" x="34" y="405" width="307" height="50"/>
@@ -277,6 +283,9 @@
                                 <state key="normal" title="Share SMS">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="shareSMS:" destination="okf-Ud-mDy" eventType="touchUpInside" id="87G-1h-5cU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
